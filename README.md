@@ -21,3 +21,25 @@ How to run Java Gui using xming on windows for mc to install clients.
 18. Before clicking anything, make sure to set the install path to the correct path: /var/mobile/Documents/minecraft/ instead of whatever it showed.
 
 That should be it. 
+
+# Java-gui-through-localhost(ios app)
+1. Install Mocha x11 lite from the appstore: https://apps.apple.com/us/app/mocha-x11-lite/id1440418587
+2. Make sure you have both openjdk-16-jre and openjdk-jre from your package manager and also fontconfig and also fontconfig-config. 
+3. Now go into the Mocha x11 app and then "clients advanced configuration"
+4. Look for the box that contains "DISPLAY=$IP:0;export DISPLAY" and remove the $IP text from that box so it says "DISPLAY=:0; export DISPLAY"
+5. Go back to the main page of Mocha x11 and go into "Configure clients" section
+6. Go the bottom left where it says "New" to create a new client. 
+7. Click on that new client and set the prompts as followed:
+Client IP: localhost
+Port: 2222(if on procursus) or 44(if on checkra1n using bingner bootstrap)
+SSH: enabled
+command: java -jar [path to the jar file you want opened in the x11 displau]
+User: mobile 
+Password: alpine(stock password to mobile) 
+8. Once your client has been filled out to those details, go back to the main page of Mocha x11
+9. Tap on start(to start a x11 display server)
+10. Tap on the 4 horizontal lines at the bottom and then start a Client 
+The java gui should now be displayed in the box of the x11 display
+
+Tip: Seeing the traffic go up usally means that a java gui is starting.
+Any errors you may encounter will most likely show up on the client log which is located below "start a client" 
